@@ -1,0 +1,18 @@
+body{
+  background-color: palevioletred;
+  color: white;
+}
+
+
+.figure-container {
+  height: 250px;
+  width: 200px;
+  fill: transparent;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-width: 5px;
+}
+
+.figure-part {
+  display: none;
+}
