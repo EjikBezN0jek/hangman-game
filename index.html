@@ -8,26 +8,51 @@
   <title>Виселица</title>
 </head>
 <body>
- <h1>Виселица</h1>
- <p>Найди скрытое слово - Введи букву</p>
+<h1>Виселица</h1>
+<p>Найди скрытое слово - Введи букву</p>
 <div class="game-container">
   <svg class="figure-container">
-    <line x1="60" y1="20" x2="140" y2="20" />
-    <line x1="140" y1="20" x2="140" y2="50" />
-    <line x1="60" y1="20" x2="60" y2="230" />
-    <line x1="20" y1="230" x2="100" y2="230" />
+    <line x1="60" y1="20" x2="140" y2="20"/>
+    <line x1="140" y1="20" x2="140" y2="50"/>
+    <line x1="60" y1="20" x2="60" y2="230"/>
+    <line x1="20" y1="230" x2="100" y2="230"/>
 
     <!-- Head -->
-    <circle cx="140" cy="70" r="20" class="figure-part" />
+    <circle cx="140" cy="70" r="20" class="figure-part"/>
     <!-- Body -->
-    <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+    <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
     <!-- Arms -->
-    <line x1="140" y1="100" x2="120" y2="120" class="figure-part" />
-    <line x1="140" y1="100" x2="160" y2="120" class="figure-part" />
+    <line x1="140" y1="100" x2="120" y2="120" class="figure-part"/>
+    <line x1="140" y1="100" x2="160" y2="120" class="figure-part"/>
     <!-- Legs -->
-    <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
-    <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+    <line x1="140" y1="150" x2="120" y2="180" class="figure-part"/>
+    <line x1="140" y1="150" x2="160" y2="180" class="figure-part"/>
   </svg>
+
+  <div class="wrong-letters-container">
+    <div id="wrong-letters">
+      <p>Неправильные буквы:</p>
+      <span>e, t, u</span>
+    </div>
+  </div>
+
+  <div class="word" id="word">
+    <div class="letter">п</div>
+    <div class="letter">р</div>
+    <div class="letter">и</div>
+    <div class="letter">в</div>
+    <div class="letter">е</div>
+    <div class="letter">т</div>
+  </div>
+</div>
+
+<!--Container for final -->
+<div class="popup-container" id="popup-container">
+  <div class="popup">
+    <h2 id="final-message">Ты выиграл</h2>
+    <button id="play-button">Играть сначала</button>
+    <p>Ты уже вводил эту букву</p>
+  </div>
 </div>
 </body>
 </html>
