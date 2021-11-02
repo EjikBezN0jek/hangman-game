@@ -5,9 +5,9 @@ const finalMessage = document.getElementById("final-message");
 const notification = document.getElementById("notification-container");
 const playButton = document.getElementById("play-button");
 
-const figureParts = document.querySelectorAll("figure-part");
+const figureParts = document.querySelectorAll(".figure-part");
 
-const words = ["мускулатура","водокачка",'жердочка','вентиль','трамвай'];
+const words = ["мускулатура","водокачка",'жердочка','вентиль','трамвай', 'калькулятор', 'магазин', 'интеллект', 'гипноз', 'салями'];
 
 let selectedWord= words[Math.floor(Math.random() * words.length)];
 
@@ -36,6 +36,25 @@ function displayWord() {
 
 //Update wrong letters
 function updateWrongLettersElement(){
+  wrongLettersElement.innerHTML = `
+  ${wrongLetters.length > 0 ? '<p>Неправильные буквы:</p>' : ''}
+  ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+  `;
+
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+
+    if (index < errors){
+      part.style.display = 'block';
+    } else {
+      part.style.display = 'none';
+    }
+  });
+
+  if(wrongLetters.length === figureParts.length){
+    finalMessage.innerText = "Лооох!";
+    popup.style.display = 'flex';
+  }
 }
 
 //Show notification
@@ -47,7 +66,7 @@ function showNotification(){
 
 //Keydown letter press
   window.addEventListener("keydown", e => {
-    if(/[а-я]$/i.test(e.key)){
+    if(/[а-я]/i.test(e.key)){
       const letter = e.key;
 
       if(selectedWord.includes(letter)){
@@ -70,5 +89,18 @@ function showNotification(){
     }
   });
 
+//Play again
+playButton.addEventListener("click", () => {
+    correctLetters.splice(0);
+    wrongLetters.splice(0);
+
+    selectedWord= words[Math.floor(Math.random() * words.length)];
+
+    displayWord();
+
+    updateWrongLettersElement();
+
+    popup.style.display = 'none';
+  });
 
 displayWord();
