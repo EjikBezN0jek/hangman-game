@@ -1,31 +1,60 @@
-*{
+html {
   box-sizing: border-box;
+  height: 100%;
 }
 
-body{
-  background-color: palevioletred;
+* {
+  box-sizing: inherit;
+}
+
+body {
+  background: url("src/images/back-to-school-doodles-pattern-vector-1497432.jpg") repeat-x;
   color: white;
   font-family: "Comic Sans MS",sans-serif;
+  font-weight: normal;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 80vh;
-  margin: 0;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 100%;
   overflow: hidden;
 }
 h1{
-  margin: 50px 0 0;
+  margin: 0;
+  font-size: 50px;
 }
-.game-container {
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 25px 0;
+  flex-shrink: 0;
+  background-color: #211989;
+}
+
+.main {
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #211989;
   position: relative;
-  padding: 50px;
-  margin: auto;
-  height: 350px;
-  width: 450px;
 }
+
 .figure-container {
-  height: 250px;
+  height: 50%;
+}
+
+.figure {
+  transform: scale(1.5);
   width: 200px;
+  min-height: 250px;
   fill: transparent;
   stroke: white;
   stroke-linecap: round;
@@ -46,7 +75,7 @@ h1{
 }
 
 .wrong-letters-container p {
-  margin: 0 0 5px;
+  margin: 0 0 20px;
 }
 
 .wrong-letters-container span {
@@ -55,24 +84,26 @@ h1{
 
 .word {
   display: flex;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .letter{
-  border-bottom: solid 5px pink;
+  border-bottom: solid 8px #3B83BD;
   display: inline-flex;
-  font-size: 30px;
+  font-size: 70px;
   align-items: center;
   justify-content: center;
-  margin:  0 5px;
-  height: 50px;
-  width: 20px;
+  margin:  0 8px;
+  height: 100px;
+  width: 100%;
+  padding: 0 20px;
+  max-width: 70px;
 }
 
 .popup-container {
-  background-color: rgba(79, 28, 71, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -84,18 +115,21 @@ h1{
 }
 
 .popup {
-  background-color: palevioletred;
+  background-color: #211989;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
+
 .popup button {
   cursor: pointer;
+  font-family: "Comic Sans MS", sans-serif;
   background-color: white;
-  color: palevioletred;
+  color: #211989;
   border: none;
+  border-radius: 5px;
   font-size: 16px;
   padding: 12px 20px;
   margin-top: 20px;
@@ -110,18 +144,22 @@ h1{
 }
 
 .notification-container {
-  background-color: rgba(79, 28, 71, 0.4);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 10px 10px 0 0;
   padding: 15px 20px;
   position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -60px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
 .notification-container p {
   margin: 0;
+  color: #211989;
 }
 
 .notification-container.show {
-  transform: translateY(-60px);
+  transform: translateX(-50%) translateY(-60px);
 }

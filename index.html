@@ -8,32 +8,35 @@
   <title>Виселица</title>
 </head>
 <body>
-<h1>Виселица</h1>
-<p>Найди скрытое слово - Введи букву</p>
-<div class="game-container">
-  <svg class="figure-container">
-    <line x1="60" y1="20" x2="140" y2="20"/>
-    <line x1="140" y1="20" x2="140" y2="50"/>
-    <line x1="60" y1="20" x2="60" y2="230"/>
-    <line x1="20" y1="230" x2="100" y2="230"/>
+<header class="header">
+  <h1>Виселица</h1>
+  <p>Найди скрытое слово - введи букву</p>
+</header>
+<main class="main">
+  <div class="figure-container">
+    <svg class="figure">
+      <line x1="60" y1="20" x2="140" y2="20"/>
+      <line x1="140" y1="20" x2="140" y2="50"/>
+      <line x1="60" y1="20" x2="60" y2="230"/>
+      <line x1="20" y1="230" x2="100" y2="230"/>
 
-    <!-- Head -->
-    <circle cx="140" cy="70" r="20" class="figure-part"/>
-    <!-- Body -->
-    <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
-    <!-- Arms -->
-    <line x1="140" y1="100" x2="120" y2="120" class="figure-part"/>
-    <line x1="140" y1="100" x2="160" y2="120" class="figure-part"/>
-    <!-- Legs -->
-    <line x1="140" y1="150" x2="120" y2="180" class="figure-part"/>
-    <line x1="140" y1="150" x2="160" y2="180" class="figure-part"/>
-  </svg>
-
+      <!-- Head -->
+      <circle cx="140" cy="70" r="20" class="figure-part"/>
+      <!-- Body -->
+      <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
+      <!-- Arms -->
+      <line x1="140" y1="100" x2="120" y2="120" class="figure-part"/>
+      <line x1="140" y1="100" x2="160" y2="120" class="figure-part"/>
+      <!-- Legs -->
+      <line x1="140" y1="150" x2="120" y2="180" class="figure-part"/>
+      <line x1="140" y1="150" x2="160" y2="180" class="figure-part"/>
+    </svg>
+  </div>
   <div class="wrong-letters-container">
     <div id="wrong-letters"></div>
   </div>
   <div class="word" id="word"></div>
-</div>
+</main>
 
 <!--Container for final -->
 <div class="popup-container" id="popup-container">
@@ -47,6 +50,7 @@
 <div class="notification-container" id="notification-container">
   <p>Ты уже вводил эту букву</p>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>

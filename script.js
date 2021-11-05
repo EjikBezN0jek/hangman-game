@@ -29,7 +29,7 @@ function displayWord() {
   const innerWord = wordElement.innerText.replace(/\n/g, "");
 
   if (innerWord === selectedWord){
-    finalMessage.innerText = "Юху! Ты выиграл!";
+    finalMessage.innerText = "Юху! Ты выиграл! :)";
     popup.style.display ="flex";
   }
 }
@@ -52,7 +52,7 @@ function updateWrongLettersElement(){
   });
 
   if(wrongLetters.length === figureParts.length){
-    finalMessage.innerText = "Лооох!";
+    finalMessage.innerText = "Ты проиграл! :(";
     popup.style.display = 'flex';
   }
 }
